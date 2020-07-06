@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "WeightWatchers"
+  "defaultProject": "WeightWatchers",
+  "cli": {
+    "analytics": "aa28ed26-c105-4ed4-91d1-9ce60ce8cead"
+  }
 }
