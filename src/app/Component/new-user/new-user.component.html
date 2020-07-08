@@ -1,0 +1,44 @@
+<div>
+    <div class="wrap">
+    <div dir="rtl" class="wrap-example">
+        <a>New login</a>
+       <form class="example-form">
+         <mat-form-field class="example-full-width">
+           <input required matInput placeholder="Email" [(ngModel)]="email" name="email">
+         </mat-form-field>
+       </form>
+ 
+       <form class="example-form">
+         <mat-form-field class="example-full-width">
+           <input required type="password" matInput placeholder="Password" [(ngModel)]="password" name="password">
+         </mat-form-field>
+       </form>
+       
+       <form class="example-form">
+         <mat-form-field class="example-full-width">
+           <input  matInput placeholder="First Name" [(ngModel)]="firstName" name="firstName">
+         </mat-form-field>
+       </form>
+ 
+       <form class="example-form">
+         <mat-form-field class="example-full-width">
+           <input  matInput placeholder="Last Name" [(ngModel)]="lastName" name="lastName">
+         </mat-form-field>
+       </form>
+
+       <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input  matInput placeholder="Height" [(ngModel)]="height" name="height">
+        </mat-form-field>
+      </form>
+
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input  matInput placeholder="Weight" [(ngModel)]="weight" name="weight">
+        </mat-form-field>
+      </form> 
+      
+       <input type="button" class="conect" value="Sign up" (click)="newUser()"> 
+       <br>
+     </div>
+   </div> 

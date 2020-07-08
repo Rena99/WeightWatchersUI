@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import {CardModule} from './card/card.module';
+import {CardModule} from 'src/app/Component/card/card.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from 'src/app/Component/login/login.component';
 /////////////////////////////////////////////////////////////////////
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
@@ -19,15 +19,18 @@ import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from "@angular/material/form-field"
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-//import {MatInputModule, MatMenuModule} from '@angular/material';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatMenuModule} from '@angular/material/menu';
+import { NewUserComponent } from 'src/app/Component/new-user/new-user.component';
+import{AppRoutingModule} from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,
@@ -36,15 +39,14 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MatCheckboxModule, FormsModule
-    ,
-   // MatInputModule, MatMenuModule,
+    MatCheckboxModule, FormsModule,
+   MatInputModule, MatMenuModule,
     MatDialogModule,MatTableModule,MatFormFieldModule
     ,MatTabsModule,MatSelectModule,MatSnackBarModule,MatDatepickerModule,
     MatNativeDateModule,MatRippleModule,MatTreeModule,MatIconModule,MatProgressBarModule,
     FormsModule,
-  // RouterModule.forRoot(appRoute)
- 
+  // RouterModule.forRoot(AppRoutingModule)
+
   ],
   providers: [],
   bootstrap: [AppComponent]

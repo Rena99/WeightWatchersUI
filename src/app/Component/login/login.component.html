@@ -1,0 +1,20 @@
+
+<div>
+    <div class="wrap">
+      <div dir="rtl" class="wrap-example">
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <input required matInput placeholder="Email" [(ngModel)]="email" name="email">
+          </mat-form-field>
+        </form>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <input required type="password" matInput placeholder="Password" [(ngModel)]="password" name="password">
+          </mat-form-field>
+        </form>
+        <input type="button" class="conect" value="Sign in" (click)="conect()" [disabled]="!email || !password">
+         &nbsp; &nbsp; &nbsp; &nbsp;
+         <input type="button" class="conect" value="new user" (click)="enterNewUser()">
+        </div>
+      </div> 
+    </div>

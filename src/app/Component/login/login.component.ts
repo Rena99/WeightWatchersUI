@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {  Login } from 'src/app/Models/login';
 import { LoginService } from 'src/app/Services/login.service';
 import { Router } from '@angular/router';
@@ -9,45 +9,43 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  // @Output() loginOutput:EventEmitter<Login>=new EventEmitter();
+ 
   constructor(private loginSer:LoginService,private route:Router) { }
   email:string="";
   password:string="";
+id:number;
+  
   ngOnInit(): void {
+  }
+  enterNewUser()
+  {
+    this.route.navigate(["./newUser"])
   }
   conect()
   {
     var login=new Login()
     login.email=this.email;
     login.password=this.password;
+    login.id=this.id;
+    
     this.loginSer.checkUser(login).subscribe(
       d=>{
         if(d!=null)
         {
           this.loginSer.setName(this.email);
-          this.loginSer.setPassword(this.password)
-         alert("I is comming")
+          this.loginSer.setPassword(this.password);
+          sessionStorage.setItem("currentPatient", d.toString());
+          // sessionStorage.getItem("NewCurrentPatient",d.id)
+          this.route.navigate(["./card"]);
          }
          else{
-           alert(" משתמש אינו קיים,נא לחץ על צור משתמש!")
-         }
+           alert(" User does not exist!")}
         },
       e=>{alert("error!")}
     );
   }
-  newUser()
-  {
-    var login=new Login();
-    login.email=this.email
-    login.password=this.password
-    //login.roleId=2
-    this.loginSer.addUserToDB(login).subscribe(
-      myD=>{
-        this.loginSer.setLocalUser(this.email,this.password)
-       alert(this.loginSer.email+" you added succesfuly!!! please press התחברות")
-    },
-      myE=>{alert(myE.message)}
-    );
-  }
+
 }
 
   
